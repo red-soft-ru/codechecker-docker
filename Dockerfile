@@ -22,12 +22,3 @@ RUN cd /usr/bin && \
     ln -s clang-tidy-18 clang-tidy && \
     ln -s /codechecker/bin/CodeChecker .
 
-
-
-#./autogen.sh --enable-binreloc --with-builtin-tommath --with-builtin-tomcrypt --with-builtin-icu
-#./venv/bin/CodeChecker log  --build "make -j4" --output ./compile_commands.json
-#./venv/bin/CodeChecker analyze -j4 --ctu --enable sensitive --analyzers clangsa clang-tidy cppcheck --output ./reports ./compile_commands.json
-#./venv/bin/CodeChecker parse ./reports --export html --output ./reports_html
-
-#./venv/bin/CodeChecker store --trim-path-prefix $(pwd) --name ${RDB_VERSION} ./reports --url http://10.81.81.123:8001/rdb50
-
