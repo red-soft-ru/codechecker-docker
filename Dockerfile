@@ -4,8 +4,7 @@ ENV CC_LOGGER_GCC_LIKE "gcc:g++:clang:cc1:cc1plus"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN sed /etc/apt/sources.list -e 's|http://.*ubuntu/|http://mirror.yandex.ru/ubuntu/|' -i
-RUN apt update 
-RUN apt install -y wget gnupg2 curl lsb-core g++ make autogen autoconf libtool libz-dev libldap2-dev libkrb5-dev python3-pip unzip cmake cppcheck python3-virtualenv
+RUN apt update && apt install -y wget gnupg2 curl lsb-core g++ make autogen autoconf libtool libz-dev libldap2-dev libkrb5-dev python3-pip unzip cmake cppcheck python3-virtualenv git
 
 RUN wget https://apt.llvm.org/llvm-snapshot.gpg.key
 RUN apt-key add llvm-snapshot.gpg.key
