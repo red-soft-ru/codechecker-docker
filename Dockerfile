@@ -8,12 +8,12 @@ RUN apt update && apt install -y wget gnupg2 curl lsb-core g++ make autogen auto
 
 RUN wget https://apt.llvm.org/llvm-snapshot.gpg.key
 RUN apt-key add llvm-snapshot.gpg.key
-RUN echo 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal main' > /etc/apt/sources.list.d/clang.list
+RUN echo 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-19 main' > /etc/apt/sources.list.d/clang.list
 RUN apt update
-RUN apt install -y clang-tidy-18
+RUN apt install -y clang-tidy-19
 
 RUN virtualenv /codechecker
-RUN /codechecker/bin/python3 -m pip install codechecker==6.22.2.post1
+RUN /codechecker/bin/python3 -m pip install codechecker==6.24.4
 
 RUN cd /usr/bin && \
     rm -f clang clang-tidy  && \
