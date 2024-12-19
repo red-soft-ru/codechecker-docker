@@ -12,7 +12,7 @@ RUN echo 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-19 main' > /etc/ap
 RUN apt update
 RUN apt install -y clang-tidy-19
 
-RUN curl -o mcli.deb http://minio.red-soft.biz/3rdparty/minio/mcli_20230216192011.0.0_amd64.deb && dpkg -i mcli.deb && rm mcli.deb
+RUN curl -o mcli.deb https://dl.min.io/client/mc/release/linux-amd64/archive/mcli_20230216192011.0.0_amd64.deb && dpkg -i mcli.deb && rm mcli.deb
 
 RUN virtualenv /codechecker
 RUN /codechecker/bin/python3 -m pip install codechecker==6.24.4
