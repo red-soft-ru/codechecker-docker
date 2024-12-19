@@ -19,5 +19,6 @@ RUN cd /usr/bin && \
     rm -f clang clang-tidy  && \
     ln -s clang-18 clang && \
     ln -s clang-tidy-18 clang-tidy && \
-    ln -s /codechecker/bin/CodeChecker .
+    ln -s /codechecker/bin/CodeChecker . && \
+    ln -s /codechecker/bin/report-converter .
 
